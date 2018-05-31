@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Favourite resource:
+  # CREATE
+  get "/favourites/new", :controller => "favourites", :action => "new"
+  post "/create_favourite", :controller => "favourites", :action => "create"
+
+  # READ
+  get "/favourites", :controller => "favourites", :action => "index"
+  get "/favourites/:id", :controller => "favourites", :action => "show"
+
+  # UPDATE
+  get "/favourites/:id/edit", :controller => "favourites", :action => "edit"
+  post "/update_favourite/:id", :controller => "favourites", :action => "update"
+
+  # DELETE
+  get "/delete_favourite/:id", :controller => "favourites", :action => "destroy"
+  #------------------------------
+
   devise_for :users
   # Routes for the User resource:
   # READ
