@@ -20,8 +20,11 @@
         <td><%= favourite.user.email %></td>
         <td>
           <a href="/favourites/<%= favourite.id %>" class="btn btn-primary">Show</a>
-          <a href="/favourites/<%= favourite.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_favourite/<%= favourite.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          
+          <% if current_user == favourite.user %>
+            <a href="/favourites/<%= favourite.id %>/edit" class="btn btn-warning">Edit</a>
+            <a href="/delete_favourite/<%= favourite.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <% end %>
         </td>
       </tr>
       <% end %>
