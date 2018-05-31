@@ -17,7 +17,7 @@
       <% @favourites.each do |favourite| %>
       <tr>
         <td><%= favourite.movie.title %></td>
-        <td><%= favourite.user_id %></td>
+        <td><%= favourite.user.email %></td>
         <td>
           <a href="/favourites/<%= favourite.id %>" class="btn btn-primary">Show</a>
           <a href="/favourites/<%= favourite.id %>/edit" class="btn btn-warning">Edit</a>
